@@ -12,7 +12,9 @@ sma(train_data, title, 20)
 sma(train_data, title, 50)
 sma(train_data, title, 100)
 sma(train_data, title, 200)
+rsi(train_data, title)
+
 # print(title)
-# print(train_data[1])
+# print(train_data[-1])
 
 export_csv(train_data, title, './a.csv')

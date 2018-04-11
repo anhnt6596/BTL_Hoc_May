@@ -11,10 +11,10 @@ def read_csv(file):
         for item in str_list[1:]:
             float_list.append(float(item))          # Các cột khác đổi sang float
         result.append(float_list)
-    return title, result[:-1]
+    return title, result[:-1]                       # Éo hiểu sao hàng cuối nó cũng đọc vào
 
 def export_csv(list, title, file):
-    myFile = open(file, 'w')
+    myFile = open(file, 'w', newline='')
     with myFile:
         writer = csv.writer(myFile)
         writer.writerows([title])

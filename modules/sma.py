@@ -9,7 +9,7 @@ def sma(list, title, number, index = 10):
         for i in list[counter - n_back : counter + 1]:
             total += i[index]
         sma_val = total / (n_back + 1) 
-        item.append(sma_val)
+        item.append(round(sma_val))
         new_list.append(item)
     list = new_list
     print('adding SMA(' + str(number) + ') completed')
