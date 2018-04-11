@@ -1,3 +1,5 @@
+import csv
+
 def read_csv(file):
     rows = open(file).read().split('\n')
     title = rows[0].split(',')    
@@ -11,6 +13,14 @@ def read_csv(file):
         result.append(float_list)
     return title, result[:-1]
 
+def export_csv(list, title, file):
+    myFile = open(file, 'w')
+    with myFile:
+        writer = csv.writer(myFile)
+        writer.writerows([title])
+        writer.writerows(list[:])
+        
+    print("Writing complete")
 # title, train_data = preprocessing('../data/train/training_data_vnindex.csv') # Test
 # print(train_data[10])
 # print(title)
